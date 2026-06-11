@@ -204,69 +204,22 @@ themeButton.addEventListener("click", () => {
 });
 
 /*==================== SCROLL REVEAL ANIMATION ====================*/
-// Animate Texts (splits text into letters for staggered slide-up effect)
-const initTextFx = () => {
-    const txtFxElements = document.querySelectorAll('.txt-fx');
-    txtFxElements.forEach(element => {
-        const text = element.textContent.trim();
-        element.innerHTML = ''; // Clear original content
-        
-        let count = 0;
-        const delay = 100;
-        const stagger = 15; // ms per letter delay
-        
-        const words = text.split(/\s+/);
-        words.forEach((word, wordIdx) => {
-            const wordSpan = document.createElement('span');
-            wordSpan.className = 'word';
-            
-            for (let i = 0; i < word.length; i++) {
-                const letterSpan = document.createElement('span');
-                letterSpan.className = 'letter';
-                letterSpan.style.transitionDelay = `${delay + stagger * count}ms`;
-                letterSpan.textContent = word[i];
-                wordSpan.appendChild(letterSpan);
-                count++;
-            }
-            
-            element.appendChild(wordSpan);
-            
-            // Add a space between words
-            if (wordIdx < words.length - 1) {
-                const spaceSpan = document.createElement('span');
-                spaceSpan.className = 'letter';
-                spaceSpan.style.transitionDelay = `${delay}ms`;
-                spaceSpan.innerHTML = '&nbsp;';
-                element.appendChild(spaceSpan);
-                count++;
-            }
-        });
+const revealElements = document.querySelectorAll('.reveal-top');
+
+const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('active-reveal');
+            observer.unobserve(entry.target); // run once
+        }
     });
-};
 
-// Initialize text effects once DOM is loaded
-document.addEventListener("DOMContentLoaded", () => {
-    initTextFx();
-    
-    // Select all elements to be animated on scroll
-    const revealElements = document.querySelectorAll(
-        '.reveal-fade-up, .reveal-fade-right, .reveal-fade-in, .txt-fx'
-    );
-
-    const revealObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active-reveal');
-                observer.unobserve(entry.target); // Trigger animation once
-            }
-        });
     }, {
-        root: null,
-        threshold: 0.1, // slightly lower threshold for better mobile triggers
-        rootMargin: "0px"
-    });
+    root: null,
+    threshold: 0.15,
+    rootMargin: "0px"
+});
 
     revealElements.forEach(el => {
-        revealObserver.observe(el);
-    });
+    revealObserver.observe(el);
 });
