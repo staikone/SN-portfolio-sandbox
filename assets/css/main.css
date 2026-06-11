@@ -1555,7 +1555,7 @@ margin-left: 16px;
 .reveal-fade-up {
     opacity: 0;
     transform: translateY(40px);
-    transition: opacity 0.9s cubic-bezier(0.25, 1, 0.5, 1), transform 0.9s cubic-bezier(0.25, 1, 0.5, 1);
+    transition: opacity 1.2s cubic-bezier(0.25, 1, 0.5, 1), transform 1.2s cubic-bezier(0.25, 1, 0.5, 1)
     will-change: opacity, transform;
 }
 
@@ -1567,7 +1567,7 @@ margin-left: 16px;
 .reveal-fade-right {
     opacity: 0;
     transform: translateX(-40px);
-    transition: opacity 0.9s cubic-bezier(0.25, 1, 0.5, 1), transform 0.9s cubic-bezier(0.25, 1, 0.5, 1);
+    transition: opacity 1.2s cubic-bezier(0.25, 1, 0.5, 1), transform 1.2s cubic-bezier(0.25, 1, 0.5, 1)
     will-change: opacity, transform;
 }
 
@@ -1579,7 +1579,7 @@ margin-left: 16px;
 .reveal-fade-left {
     opacity: 0;
     transform: translateX(40px);
-    transition: opacity 0.9s cubic-bezier(0.25, 1, 0.5, 1), transform 0.9s cubic-bezier(0.25, 1, 0.5, 1);
+    transition: opacity 1.2s cubic-bezier(0.25, 1, 0.5, 1), transform 1.2s cubic-bezier(0.25, 1, 0.5, 1)
     will-change: opacity, transform;
 }
 
@@ -1590,7 +1590,7 @@ margin-left: 16px;
 
 .reveal-fade-in {
     opacity: 0;
-    transition: opacity 0.9s cubic-bezier(0.25, 1, 0.5, 1);
+    transition: opacity 1.2s cubic-bezier(0.25, 1, 0.5, 1);
     will-change: opacity;
 }
 
@@ -1612,15 +1612,6 @@ margin-left: 16px;
     width: 100%;
 }
 
-/* Inline context (like inside buttons) */
-.button .txt-fx,
-.services__button .txt-fx,
-.contact__button .txt-fx,
-.txt-fx.inline {
-    display: inline-block;
-    width: auto;
-    vertical-align: middle;
-}
 
 .txt-fx .word {
     overflow: hidden;
@@ -1635,30 +1626,14 @@ margin-left: 16px;
     will-change: transform;
 }
 
-.txt-fx .space-letter {
-    display: inline-block;
-    white-space: nowrap;
-}
-
-/* slide up letters (letter mode) */
-.txt-fx.slide-up.letter-mode .letter {
+/* slide up letters */
+.txt-fx.slide-up .letter {
     transform: translate3d(0, 1.2em, 0);
     transition: transform 0.9s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-.active-reveal .txt-fx.slide-up.letter-mode .letter,
-.active-reveal.txt-fx.slide-up.letter-mode .letter {
-    transform: translate3d(0, 0, 0);
-}
-
-/* slide up words (word mode) */
-.txt-fx.slide-up.word-mode .word {
-    transform: translate3d(0, 1.2em, 0);
-    transition: transform 0.9s cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-.active-reveal .txt-fx.slide-up.word-mode .word,
-.active-reveal.txt-fx.slide-up.word-mode .word {
+.active-reveal .txt-fx.slide-up .letter,
+.active-reveal.txt-fx.slide-up .letter {
     transform: translate3d(0, 0, 0);
 }
 
