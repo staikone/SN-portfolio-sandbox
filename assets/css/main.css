@@ -663,22 +663,11 @@ margin-top: calc(var(--mb-3) + 5rem);
     border-radius: 0.5rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
 }
 
 .services__content:hover {
     transform: translateY(-5px) scale(1.02);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-
-.services__content .services__button::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 1;
 }
 
 .services__icon {
@@ -1552,77 +1541,15 @@ margin-left: 16px;
 }
 
 /*==================== SCROLL ANIMATION ====================*/
-.reveal-fade-up {
+.reveal-top {
     opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 1.2s cubic-bezier(0.25, 1, 0.5, 1), transform 1.2s cubic-bezier(0.25, 1, 0.5, 1)
-    will-change: opacity, transform;
+    transform: translateY(-30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-.reveal-fade-up.active-reveal {
+.reveal-top.active-reveal {
     opacity: 1;
     transform: translateY(0);
-}
-
-.reveal-fade-right {
-    opacity: 0;
-    transform: translateX(-40px);
-    transition: opacity 1.2s cubic-bezier(0.25, 1, 0.5, 1), transform 1.2s cubic-bezier(0.25, 1, 0.5, 1)
-    will-change: opacity, transform;
-}
-
-.reveal-fade-right.active-reveal {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-.reveal-fade-in {
-    opacity: 0;
-    transition: opacity 1.2s cubic-bezier(0.25, 1, 0.5, 1);
-    will-change: opacity;
-}
-
-.reveal-fade-in.active-reveal {
-    opacity: 1;
-}
-
-/* Stagger delays */
-.delay-100 { transition-delay: 100ms !important; }
-.delay-200 { transition-delay: 200ms !important; }
-.delay-300 { transition-delay: 300ms !important; }
-.delay-400 { transition-delay: 400ms !important; }
-.delay-500 { transition-delay: 500ms !important; }
-
-/* Text Reveal Effects (like reference site) */
-.txt-fx {
-    overflow: hidden;
-    display: inline-block;
-   
-}
-
-
-.txt-fx .word {
-    overflow: hidden;
-    transform-origin: 0 100%;
-    display: inline-block;
-    white-space: nowrap;
-}
-
-.txt-fx .letter {
-    transform-origin: 0 100%;
-    display: inline-block;
-    will-change: transform;
-}
-
-/* slide up letters */
-.txt-fx.slide-up .letter {
-    transform: translate3d(0, 1.2em, 0);
-    transition: transform 0.9s cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-.active-reveal .txt-fx.slide-up .letter,
-.active-reveal.txt-fx.slide-up .letter {
-    transform: translate3d(0, 0, 0);
 }
 
 /*==================== CONTACT BUTTONS ====================*/
