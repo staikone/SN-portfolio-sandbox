@@ -250,7 +250,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     // Select all elements to be animated on scroll
     const revealElements = document.querySelectorAll(
-        '.reveal-fade-up, .reveal-fade-right, .reveal-fade-left, .reveal-fade-in, .txt-fx'
+        '.reveal-fade-up, .reveal-fade-right, .reveal-fade-in, .txt-fx'
     );
 
     const revealObserver = new IntersectionObserver((entries, observer) => {
