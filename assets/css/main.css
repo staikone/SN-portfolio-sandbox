@@ -1576,18 +1576,6 @@ margin-left: 16px;
     transform: translateX(0);
 }
 
-.reveal-fade-left {
-    opacity: 0;
-    transform: translateX(40px);
-    transition: opacity 1.2s cubic-bezier(0.25, 1, 0.5, 1), transform 1.2s cubic-bezier(0.25, 1, 0.5, 1)
-    will-change: opacity, transform;
-}
-
-.reveal-fade-left.active-reveal {
-    opacity: 1;
-    transform: translateX(0);
-}
-
 .reveal-fade-in {
     opacity: 0;
     transition: opacity 1.2s cubic-bezier(0.25, 1, 0.5, 1);
@@ -1608,8 +1596,8 @@ margin-left: 16px;
 /* Text Reveal Effects (like reference site) */
 .txt-fx {
     overflow: hidden;
-    display: block;
-    width: 100%;
+    display: inline-block;
+   
 }
 
 
